@@ -1,38 +1,252 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-main {
+  background-color: black;
+  height: auto;
+  width: 100vw;
+  /* ----For Children---- */
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+}
+
+/*-------------------- header -------------------- */
+.header-wrapper {
+  background-color: grey;
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.header-content {
+  /* border: 1px solid white; */
+  height: 100px;
+  max-width: 1080px;
+  width: 100vw;
+  /* ----For Children---- */
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-image {
+  height: 80px;
+  width: 80px;
+}
+
+/*-------------------- main -------------------- */
+.main-wrapper {
+  background-color: transparent;
+  height: auto;
+  max-width: 1080px;
+  width: 100vw;
+  /* ----For Children---- */
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/*--------------------EventList Family------------------- */
+.EventList-main {
+  /* border: 1px solid white; */
+  /* background-color: lime; */
+  height: auto;
+  width: 60%;
+  padding: 20px;
+  /* ----For Children---- */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.EventCard-main {
+  background-color: grey;
+  height: 250px;
+  width: 95%;
+  margin-bottom: 20px;
+}
+
+.card-header {
+  height: 20px;
+  width: 100%;
+  border: 1px solid black;
+  /* ----For Children---- */
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CardInfo-main {
+  border: 1px solid black;
+  height: 230px;
+  width: 55%;
+  /* ----For Children---- */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+/* ----For Children---- */
+display: flex;
+}
+
+.box-title {
+  width: 100%;
+  font-size: 1rem;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.camera-info {
+  border: 1px solid black;
+  height: 50%;
+  width: 100%;
+  /* ----For Children---- */
+  display: flex;
+}
+
+.event-info {
+  border: 1px solid black;
+  height: 50%;
+  width: 100%;
+  /* ----For Children---- */
+  display: flex;
+}
+
+.info-line-pairs {
+  background-color: white;
+  /* border: 1px solid black; */
+  width: 100%;
+  /* ----For Children---- */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.info {
+  /* border: 1px solid white; */
+  margin-top: ;
+  height: 20%;
+  width: 50%;
+}
+
+.info-title {
+  font-weight: bold;
+  text-align: right;
+  padding-right: 5px;
+}
+
+.EventImage-main {
+  /* border: 1px solid black; */
+  height: 230px;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/*--------------------Editor Family------------------- */
+.Editor-main {
+  /* border: 1px solid white; */
+  /* background-color: red; */
+  height: auto;
+  width: 40%;
+  padding-top: 20px;
+  /* ----For Children---- */
+  display: flex;
+  justify-content: center;
+}
+
+
+/*---------------Edit Event-------------- */
+.EditEvent-main {
+  background-color: grey;
+  /* border: 1px solid white; */
+  height: 1000px;
+  width: 95%;
+  display: none; /*  <-----------------Changed to "none" to display Create Event  */
+  flex-direction: column;
+}
+
+/* Editor Header and Image have properties from Card */
+
+.editor-body {
+  width: 100%;
+  height: auto;
+}
+
+.button-container {
+  /* background-color: blueviolet; */
+  height: 50px;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.editor-buttons {
+  height: 30px;
+  width: 60px;
+}
+
+/*---------------Create Event-------------- */
+.CreateEvent-main {
+  background-color: grey;
+  /* border: 1px solid white; */
+  height: 1000px;
+  width: 95%;
+  display: flex; /*  <-----------------Changed to "none" to display Create Event  */
+  flex-direction: column;
+}
+
+/* Editor Header and Image have properties from Card */
+
+.editor-body {
+  /* background-color: aqua; */
+  width: 100%;
+  height: auto;
+  /* ----For Children---- */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.info-container {
+  /* border: 1px solid yellow; */
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.event-info-container {
+  margin-top: 20px;
+
+}
+
+.button-container {
+  /* background-color: blueviolet; */
+  height: 50px;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.editor-buttons {
+  height: 30px;
+  width: 60px;
 }
