@@ -2,46 +2,41 @@ import React from 'react';
 
 function CreateEvent(props) {
     
-  // let newEventArr = ["eventId", "name", "ip", "location",
-  //                   "model", "imageURL", "timestamp",
-  //                   "eventStatus", "eventCat", "eventClass" ]
-
-
 
   function handleSaveClick() {
-    // let createdEvent = {
-    //   "eventId": 1101,
-    //   "cameraInfo": {
-    //       "name": document.getElementById("select-name").value,
-    //       "ip": document.getElementById("select-ip").value,
-    //       "location": document.getElementById("select-location").value,
-    //       "model": document.getElementById("select-model").value
-    //   },
-    //   "eventInfo": {
-    //       "imageURL": document.getElementById("select-imageURL").value,
-    //       "timestamp": "",
-    //       "eventStatus": document.getElementById("select-eventStatus").value,
-    //       "eventCat": document.getElementById("select-eventCat").value,
-    //       "eventClass": document.getElementById("select-eventClass").value,
-    //       "objObstructed": "Unknown",
-    //       "notes": ""
-    //   }
-    // }
-    let createdEvent = 
-      {"eventId": 1101, 
-      "name": document.getElementById("select-name").value,
-      "ip": document.getElementById("select-ip").value,
-      "location": document.getElementById("select-location").value,
-      "model": document.getElementById("select-model").value,
-      "imageURL": document.getElementById("select-imageURL").value,
-      "timestamp": "",
-      "eventStatus": document.getElementById("select-eventStatus").value,
-      "eventCat": document.getElementById("select-eventCat").value,
-      "eventClass": document.getElementById("select-eventClass").value,
-      "objObstructed": "Unknown",
-      "notes": ""}
+
+    let createdEvent = {
+      "eventId": 1200,
+      "cameraInfo": {
+        "name": "",
+        "ip": "",
+        "location": "",
+        "model": ""
+      },
+      "eventInfo": {
+        "imageURL": "./media/img1005.png",
+        "timestamp": "2020-08-01T04:00:05.000Z",
+        "eventStatus": "Data Complete", 
+        "eventCat": "Alarm",
+        "eventClass": "Person",
+        "objObstructed": "Unknown",
+        "notes": "Test Notes"
+      }
+    }
+    console.log('Update Props Next ID: ', props.nextId)
+    createdEvent.eventId = props.nextId;
+    createdEvent.cameraInfo.name = document.getElementById("select-name").value;
+    createdEvent.cameraInfo.ip = document.getElementById("select-ip").value;
+    createdEvent.cameraInfo.location = document.getElementById("select-location").value;
+    createdEvent.cameraInfo.model = document.getElementById("select-model").value;
+    createdEvent.eventInfo.imageURL = document.getElementById("select-imageURL").value;
+    createdEvent.eventInfo.imageURL = String(`./media/img${props.nextId}.png`);
+    createdEvent.eventInfo.eventStatus = document.getElementById("select-eventStatus").value;
+    createdEvent.eventInfo.eventCat = document.getElementById("select-eventCat").value;
+    createdEvent.eventInfo.eventClass = document.getElementById("select-eventClass").value; 
+
     console.log("Save Button Clicked")
-    console.log("Saved New Event to Array ", createdEvent);
+    console.log("Saved New Event to Array in CreateEvent", createdEvent);
     props.createEvent(createdEvent);
   }
 
@@ -74,7 +69,7 @@ function CreateEvent(props) {
                 <input className="info info-data" id="select-model" defaultValue={props.editedEvent[0].cameraInfo.model}></input>
                 
                 <h6 className="info info-title">Image URL:</h6>
-                <input className="info info-data" id="select-imageURL" defaultValue={props.editedEvent[0].cameraInfo.model}></input>
+                <input className="info info-data" id="select-imageURL" defaultValue={`./media/${props.nextId}.png`}></input>
 
           </div>
           <div className="event-info-container info-container">
@@ -109,8 +104,8 @@ function CreateEvent(props) {
         
         <div className="button-container">
           <button className="editor-buttons" onClick={handleSaveClick} >Save</button>
-          <button className="editor-buttons">Cancel</button>
-          <button className="editor-buttons">Delete</button>
+          {/* <button className="editor-buttons">Cancel</button>
+          <button className="editor-buttons">Delete</button> */}
         </div>
       </div>
     </div>

@@ -6,34 +6,33 @@ class EventList extends Component {
         super(props);
 
         this.state = {
-            eventsList:  this.props.fileEvents
-            //allEventsList: this.props.allEvents
+            eventsList: []
         }
         
     }
     
-    componentDidMount() {
-        //this.setState( { eventsList: this.props.fileEvents } )
-        //this.setState( { allEventsList: this.props.allEvents } )
-        //console.log(this.props.fileEvents);
-        console.log("allEvents in EventList: ", this.state.allEventsList);
-        //console.log("fileEvents in EventList: ", this.props.fileEvents);
-        //console.log("allEvents in EventList: ", this.props.allEvents);
-    }
-
-
     render() {
 
-       const eventsListMap = this.state.eventsList.map( function(curr, index) {
+       const eventsListMap = this.props.allEvents.map( function(curr, index) {
             return <EventCard key={index}
                         cardEvents =  {curr}
-
                     />
 
        }  ) 
         return (
-            <div className="EventList-main">
-                {eventsListMap}
+            <div>
+                <div className="EventList-top-button-container">
+                    <button className="list-top-buttons" 
+                        onClick={this.toggleEditEvent}>NEW
+                        </button>
+                    <button className="list-top-buttons" 
+                        onClick={this.toggleCreateEvent}>ALL
+                        </button>
+                </div>
+                <div className="EventList-main" >
+                    {eventsListMap}
+                </div>
+                
             </div>
 
         );

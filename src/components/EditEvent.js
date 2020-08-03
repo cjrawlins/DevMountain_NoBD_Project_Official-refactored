@@ -2,12 +2,13 @@ import React from 'react';
 
 function EditEvent(props) {
   
-  let selectedId = 0;
+  let selectedId = 1000;
   let selectedStatus = "";
   let selectedCat = "";
   let selectedClass = ""
 
   
+
   function getSelectedId() {
     selectedId = document.getElementById("select-eventId").value;
     console.log("Selected ID: ", selectedId);
@@ -29,7 +30,7 @@ function EditEvent(props) {
         <h2 className="card-x">X</h2>
       </header>
       <div className="editor-image-container">
-        <img src="./media/img_1001.png" alt="eventImage" className="card-image" ></img>
+        <img src={`./media/img${selectedId}.png`} alt="eventImage" className="card-image" ></img>
       </div>
       <div className="editor-body">
         
@@ -49,17 +50,8 @@ function EditEvent(props) {
 
         <div className="event-info-container info-container">
             <h6 className="info info-title">Select ID to edit:</h6>
-            <select className="editor-selectId info info-data" id="select-eventId"
-              onChange={getSelectedId}
-            >
-                <option value="0">{"Select ID to Edit"}</option>
-                <option value={props.eventIdList[0]}>{props.eventIdList[0]}</option>
-                <option value={props.eventIdList[1]}>{props.eventIdList[1]}</option>
-                <option value={props.eventIdList[2]}>{props.eventIdList[2]}</option>
-                <option value={props.eventIdList[3]}>{props.eventIdList[3]}</option>
-                <option value={props.eventIdList[4]}>{props.eventIdList[4]}</option>
-                <option value={props.eventIdList[5]}>{props.eventIdList[5]}</option>
-            </select>
+            <input type="number" min="1000" defaultValue="1000" className="editor-selectId info info-data" id="select-eventId"
+              onChange={getSelectedId}></input>
             
             <h6 className="info info-title">Select Status:</h6>
             <select className="editor-selectId info info-data" id="select-eventStatus">
@@ -91,7 +83,7 @@ function EditEvent(props) {
         </div>
         <div className="button-container">
           <button className="editor-buttons" onClick={handleSaveClick} >Save</button>
-          <button className="editor-buttons">Cancel</button>
+          {/* <button className="editor-buttons">Cancel</button> */}
           <button className="editor-buttons" onClick={ () => props.deleteEvent(selectedId)}>Delete</button>
         </div>
       </div>

@@ -10,7 +10,7 @@ app.use(express.json());
 // Read All Events //
 app.get("/api/events", ctrl.getEvents);
 // Read Single Event
-app.get("/api/events/:id", ctrl.getEvent);
+//app.get("/api/events/:id", ctrl.getEvent);
 // Create Event //
 app.post("/api/events", ctrl.createEvent);
 // Update Event //
@@ -19,7 +19,7 @@ app.put("/api/events/:id", ctrl.updateEvent);
 app.delete("/api/events/:id", ctrl.deleteEvent);
 
 // ---Queries--- //
-app.get("/api/events", ctrl.getEvents);
+app.get("/api/event/?", ctrl.getQuery);
 
 
 app.listen(port, () => console.log(`Server listening on port: ${port}`));

@@ -16,7 +16,7 @@ function EventCard(props) {
       <div className="card-header">
         <h2 className="card-icon">{cardTimestamp}</h2>
         <h2 className="card-title">{`Event ID: ${cardId}`}</h2>
-        <h2 className="card-x">X</h2>
+        <h2 className="card-x">_</h2>
       </div>
       <div className="card-body">
         <CardInfo 

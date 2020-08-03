@@ -1,7 +1,16 @@
+window {
+  
+}
+
+#root {
+  background-color: black;
+}
+
 .App-main {
   background-color: black;
   height: auto;
-  width: 100vw;
+  width: 98vw;
+  min-width: 1000px;
   /* ----For Children---- */
   display: flex;
   flex-direction: column;
@@ -13,7 +22,7 @@
 .header-wrapper {
   background-color: grey;
   height: 100px;
-  width: 100vw;
+  width: 98vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +33,7 @@
   /* border: 1px solid white; */
   height: 100px;
   max-width: 1080px;
-  width: 100vw;
+  width: 98vw;
   /* ----For Children---- */
   display: flex;
   align-items: center;
@@ -40,7 +49,8 @@
 .main-wrapper {
   background-color: transparent;
   height: auto;
-  max-width: 1080px;
+  max-width: 98%;
+  min-width: 1000px;
   width: 100vw;
   /* ----For Children---- */
   display: flex;
@@ -53,26 +63,39 @@
   /* border: 1px solid white; */
   /* background-color: lime; */
   height: auto;
-  width: 60%;
+  width: calc(100% - 500px);
   padding: 20px;
   /* ----For Children---- */
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-
 }
+
 
 .EventCard-main {
   background-color: grey;
   height: 250px;
-  width: 95%;
-  margin-bottom: 20px;
+  width: 550px;
+  margin: 10px;
+  border-radius: 2%;
+}
+
+.EventList-top-button-container {
+  width: 400px; 
+  position: relative;
+  margin-left: 100px;
+  
+}
+
+.list-top-buttons {
+  width: 50%;
 }
 
 .card-header {
   height: 20px;
-  width: 100%;
-  border: 1px solid black;
+  width: 98%;
+  /* border: 1px solid black; */
   /* ----For Children---- */
   padding: 5px;
   display: flex;
@@ -84,6 +107,7 @@
   border: 1px solid black;
   height: 230px;
   width: 55%;
+  border-radius: 2%;
   /* ----For Children---- */
   display: flex;
   flex-direction: column;
@@ -119,7 +143,7 @@ display: flex;
 
 .info-line-pairs {
   background-color: white;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   width: 100%;
   /* ----For Children---- */
   display: flex;
@@ -159,11 +183,28 @@ display: flex;
   /* border: 1px solid white; */
   /* background-color: red; */
   height: auto;
-  width: 40%;
+  width: 500px;
   padding-top: 20px;
+  position: fixed;
+  top: 100px;
+  right: 0;
   /* ----For Children---- */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.editor-top-button-container {
+  height: 25px;
+  width: 95%;
+}
+
+.editor-top-buttons {
+  width: 50%;
+}
+
+.button-selected {
+  background-color: grey;
+  border: none;
 }
 
 
@@ -171,9 +212,10 @@ display: flex;
 .EditEvent-main {
   background-color: grey;
   /* border: 1px solid white; */
-  height: 1000px;
+  border-radius: 2%;
+  height: auto;
   width: 95%;
-  display: none; /*  <-----------------Changed to "none" to display Create Event  */
+  display: flex; /*  <-----------------Changed to "none" to display Create Event  */
   flex-direction: column;
 }
 
@@ -202,8 +244,9 @@ display: flex;
 /*---------------Create Event-------------- */
 .CreateEvent-main {
   background-color: grey;
+  border-radius: 2%;
   /* border: 1px solid white; */
-  height: 1000px;
+  height: auto;
   width: 95%;
   display: flex; /*  <-----------------Changed to "none" to display Create Event  */
   flex-direction: column;
@@ -236,17 +279,5 @@ display: flex;
 
 }
 
-.button-container {
-  /* background-color: blueviolet; */
-  height: 50px;
-  width: 100%;
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 
-.editor-buttons {
-  height: 30px;
-  width: 60px;
-}
+
